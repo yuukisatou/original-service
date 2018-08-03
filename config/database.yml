@@ -48,7 +48,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+#  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: stress-checker_production
   username: stress-checker
   password: <%= ENV['STRESS-CHECKER_DATABASE_PASSWORD'] %>
+
